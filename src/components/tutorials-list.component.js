@@ -66,7 +66,7 @@ export default class TutorialsList extends Component {
                 console.log(response.data);
                 this.refreshList();
             })
-            .catch(e=>{
+            .catch(e => {
                 console.log(e);
             });
     }
@@ -79,7 +79,7 @@ export default class TutorialsList extends Component {
                 });
                 console.log(response.data);
             })
-            .catch(e=>{
+            .catch(e =>  {
                 console.log(e);
             });
     }

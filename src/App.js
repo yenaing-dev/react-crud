@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react";
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import AddTutorial from "./components/add-tutorial.component";
@@ -17,24 +18,24 @@ class App extends Component {
           </a>
           <div className='navbar-nav mr-auto'>
             <li className='nav-item'>
-              <link to={"/tutorials"} className='nav-link'>
+              <Link to={"/tutorials"} className='nav-link'>
                 Tutorials
-              </link>
+              </Link>
             </li>
             <li className='nav-item'>
-              <link to={"/add"} className='nav-link'>
+              <Link to={"/add"} className='nav-link'>
                 Add
-              </link>
+              </Link>
             </li>
           </div>
         </nav>
 
         <div className='container mt-3'>
-          <switch>
-            <route exact path={["/","tutorials"]} component={TutorialsList}/>
-            <route exact path="/add" component={AddTutorial} />
-            <route path="/tutorials/:id" component={Tutorial}/>
-          </switch>
+          <Routes>
+            <Route path="/" element={<TutorialsList />}/>
+            <Route path="/add" element={<AddTutorial />} />
+            <Route path="/tutorials/:id" element={<Tutorial />}/>
+          </Routes>
         </div>
       </div>
     );
